@@ -20,21 +20,21 @@ $(function() {
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(".create-form").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+		console.log('create hit');
 
     var newBurger = {
-      name: $("#ca").val().trim()
+      name: $("#burger").val().trim()
     };
-		console.log('create hit');
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(
       function() {
-        console.log("created new cat");
+        console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
       }
