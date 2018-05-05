@@ -6,8 +6,11 @@
 <ul>
   {{#each burgers}}
 		{{#unless this.devoured}}
-    	{{this.id}}
-   	 {{this.burger_name}}
+    	<div class="burgers">
+			{{this.id}}
+   	 	{{this.burger_name}}
+			</div>
+			<button class="devour" data-id="{{this.id}}">Devour It!</button>
     {{/unless}}
   {{/each}}
 </ul>
@@ -17,8 +20,11 @@
 <ul>
   {{#each burgers}}
 		{{#if this.devoured}}
+			<div class="burgers">
 			{{this.id}}
-    	{{this.burger_name}}
+   	 	{{this.burger_name}}
+			</div>
+			<button class="remake" data-id="{{this.id}}">Remake It!</button>
     {{/if}}
   {{/each}}
 </ul>

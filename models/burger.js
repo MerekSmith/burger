@@ -7,7 +7,6 @@ var burger = {
     });
   },
   insert: function(burgerName, cb) {
-		console.log('model hit', burgerName);
     orm.insertOne(burgerName, function(res) {
       cb(res);
     });
